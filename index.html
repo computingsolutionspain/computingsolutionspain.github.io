@@ -189,6 +189,22 @@
         Servicios
       </button>
     </li>
+
+    <!-- Nueva pestaña Comentarios -->
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="comentarios-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#comentarios"
+        type="button"
+        role="tab"
+        aria-controls="comentarios"
+        aria-selected="false"
+      >
+        Comentarios
+      </button>
+    </li>
   </ul>
 
   <div class="tab-content" id="myTabContent">
@@ -214,89 +230,88 @@
     </div>
 
     <!-- Formulario -->
-<div
-  class="tab-pane fade"
-  id="formulario"
-  role="tabpanel"
-  aria-labelledby="formulario-tab"
->
-  <section class="formulario mt-4 mb-5">
-    <h2 class="mb-4 text-center">Formulario de Contacto</h2>
-    <form action="https://formsubmit.co/computingsolutionspain@gmail.com" method="POST">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nombre"
-            name="nombre"
-            placeholder="Tu nombre"
-            required
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="telefono" class="form-label">Teléfono</label>
-          <input
-            type="tel"
-            class="form-control"
-            id="telefono"
-            name="telefono"
-            placeholder="Tu número"
-            required
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">Correo electrónico</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="Tu correo electrónico"
-            required
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="dispositivo" class="form-label">Tipo de dispositivo</label>
-          <select class="form-select" id="dispositivo" name="dispositivo" required>
-            <option value="">Selecciona una opción</option>
-            <option value="PC">PC de Escritorio</option>
-            <option value="Laptop">Laptop</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="urgencia" class="form-label">Nivel de urgencia</label>
-          <select class="form-select" id="urgencia" name="urgencia" required>
-            <option value="">Selecciona una opción</option>
-            <option value="Alta">Alta</option>
-            <option value="Media">Media</option>
-            <option value="Baja">Baja</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <label for="mensaje" class="form-label">¿Qué le sucede a tu computadora?</label>
-          <textarea
-            class="form-control"
-            id="mensaje"
-            name="mensaje"
-            rows="4"
-            placeholder="Describe el problema"
-            required
-          ></textarea>
-        </div>
-      </div>
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://computingsolutionspain.github.io/gracias.html" />
+    <div
+      class="tab-pane fade"
+      id="formulario"
+      role="tabpanel"
+      aria-labelledby="formulario-tab"
+    >
+      <section class="formulario mt-4 mb-5">
+        <h2 class="mb-4 text-center">Formulario de Contacto</h2>
+        <form action="https://formsubmit.co/computingsolutionspain@gmail.com" method="POST">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="telefono"
+                name="telefono"
+                placeholder="Tu número"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Tu correo electrónico"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="dispositivo" class="form-label">Tipo de dispositivo</label>
+              <select class="form-select" id="dispositivo" name="dispositivo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="PC">PC de Escritorio</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="urgencia" class="form-label">Nivel de urgencia</label>
+              <select class="form-select" id="urgencia" name="urgencia" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Alta">Alta</option>
+                <option value="Media">Media</option>
+                <option value="Baja">Baja</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="mensaje" class="form-label">¿Qué le sucede a tu computadora?</label>
+              <textarea
+                class="form-control"
+                id="mensaje"
+                name="mensaje"
+                rows="4"
+                placeholder="Describe el problema"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://computingsolutionspain.github.io/gracias.html" />
 
-      <div class="d-grid mt-4">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </div>
-    </form>
-  </section>
-</div>
-
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </div>
 
     <!-- Servicios -->
     <div
@@ -364,6 +379,35 @@
           </div>
         </div>
       </section>
+    </div>
+
+    <!-- Comentarios -->
+    <div
+      class="tab-pane fade"
+      id="comentarios"
+      role="tabpanel"
+      aria-labelledby="comentarios-tab"
+      style="background: white; color: black; border-radius: 10px; padding: 20px;"
+    >
+      <h2 class="text-center mb-4">Comentarios y Opiniones</h2>
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = "comentarios-unicos";
+        };
+
+        (function () {
+          var d = document,
+            s = d.createElement("script");
+          s.src = "https://computingsolutionspain.disqus.com/embed.js";
+          s.setAttribute("data-timestamp", +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>
+        Por favor activa JavaScript para ver los comentarios de Disqus.
+      </noscript>
     </div>
   </div>
 </div>
