@@ -382,33 +382,54 @@
     </div>
 
     <!-- Comentarios -->
-    <div
-      class="tab-pane fade"
-      id="comentarios"
-      role="tabpanel"
-      aria-labelledby="comentarios-tab"
-      style="background: white; color: black; border-radius: 10px; padding: 20px;"
-    >
-      <h2 class="text-center mb-4">Comentarios y Opiniones</h2>
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-          this.page.url = window.location.href;
-          this.page.identifier = "comentarios-unicos";
-        };
+<!-- Comentarios con Hyvor Talk y calificación por estrellas -->
+<div class="tab-pane fade" id="comentarios" role="tabpanel" aria-labelledby="comentarios-tab"
+     style="background: white; color: black; border-radius: 10px; padding: 20px;">
+  <h2 class="text-center mb-4">Comentarios y Opiniones</h2>
 
-        (function () {
-          var d = document,
-            s = d.createElement("script");
-          s.src = "https://computingsolutionspain.disqus.com/embed.js";
-          s.setAttribute("data-timestamp", +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript>
-        Por favor activa JavaScript para ver los comentarios de Disqus.
-      </noscript>
+  <!-- Calificación por estrellas -->
+  <div class="text-center mb-4">
+    <p class="mb-1">Califica nuestro servicio:</p>
+    <div id="rating-stars" class="mb-2" style="font-size: 2rem; color: #ffc107; cursor: pointer;">
+      ★★★★★
     </div>
+    <p id="rating-message" style="font-size: 0.9rem; color: gray;"></p>
+  </div>
+
+  <!-- Comentarios con Hyvor Talk -->
+  <div id="hyvor-talk-view"></div>
+  <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 13761;
+    var HYVOR_TALK_CONFIG = {
+      url: window.location.href,
+      id: "comentarios-computing-solution"
+    };
+  </script>
+  <script async type="text/javascript" src="https://talk.hyvor.com/web-api/embed.js"></script>
+
+  <script>
+    const stars = document.getElementById("rating-stars");
+    const message = document.getElementById("rating-message");
+
+    stars.addEventListener("mouseover", (e) => {
+      if (e.target.textContent === "★") {
+        const rating = [...stars.textContent].indexOf(e.target) + 1;
+        stars.textContent = "★★★★★".slice(0, rating) + "☆☆☆☆☆".slice(rating);
+      }
+    });
+
+    stars.addEventListener("click", (e) => {
+      const index = [...e.target.parentNode.childNodes].indexOf(e.target);
+      const rating = index + 1;
+      message.textContent = `¡Gracias! Has calificado con ${rating} estrella${rating > 1 ? 's' : ''}.`;
+    });
+
+    stars.addEventListener("mouseleave", () => {
+      stars.textContent = "★★★★★";
+    });
+  </script>
+</div>
+
   </div>
 </div>
 
